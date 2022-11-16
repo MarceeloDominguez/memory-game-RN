@@ -87,7 +87,6 @@ export default function App() {
               card={card}
               onPress={() => handleTapCard(index)}
               isTurnedOver={isTurnedOver}
-              fail={fail}
             />
           );
         })}

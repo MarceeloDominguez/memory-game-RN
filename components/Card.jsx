@@ -1,16 +1,11 @@
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-export default function Card({ card, isTurnedOver, onPress, fail }) {
+export default function Card({ card, isTurnedOver, onPress }) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      disabled={fail === 5}
-      style={
-        isTurnedOver
-          ? [styles.cardUp, { opacity: fail === 5 ? 0.7 : 1 }]
-          : [styles.cardDown, { opacity: fail === 5 ? 0.7 : 1 }]
-      }
+      style={isTurnedOver ? styles.cardUp : styles.cardDown}
     >
       {isTurnedOver ? (
         <Text style={styles.text}>{card}</Text>
