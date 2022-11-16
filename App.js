@@ -62,7 +62,12 @@ export default function App() {
         <Text style={styles.score}>Score: {score}</Text>
       </View>
       {fail !== 0 && (
-        <View style={styles.containerFail}>
+        <View
+          style={[
+            styles.containerFail,
+            { backgroundColor: fail <= 3 ? "#FD841F" : "#DC3535" },
+          ]}
+        >
           <Text style={styles.fail}>{fail} - 5 Fail</Text>
         </View>
       )}
@@ -137,7 +142,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 4,
     elevation: 5,
-    backgroundColor: "#DC3535",
   },
   fail: {
     color: "#EDE4E0",

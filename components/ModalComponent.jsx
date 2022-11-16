@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { View, Text, Modal, TouchableOpacity, StyleSheet } from "react-native";
+import LottieView from "lottie-react-native";
 
 export default function ModalComponent({ fail, didPlayerWin, resetGame }) {
+  const animation = useRef(null);
+
   return (
     <>
       {fail === 5 || didPlayerWin() ? (
@@ -9,9 +12,27 @@ export default function ModalComponent({ fail, didPlayerWin, resetGame }) {
           <Modal transparent={true}>
             <View style={styles.containerModal}>
               <View style={styles.contentModal}>
-                {fail === 5 && <Text style={styles.gameOver}>¡Game Over!</Text>}
+                {fail === 5 && (
+                  <>
+                    <Text style={styles.gameOver}>¡Game Over!</Text>
+                    <LottieView
+                      autoPlay
+                      ref={animation}
+                      style={styles.animationLottie}
+                      source={require("../assets/error.json")}
+                    />
+                  </>
+                )}
                 {didPlayerWin() && (
-                  <Text style={styles.title}>Congratulations 🎉</Text>
+                  <>
+                    <Text style={styles.title}>Congratulations 🎉</Text>
+                    <LottieView
+                      autoPlay
+                      ref={animation}
+                      style={styles.animationLottie}
+                      source={require("../assets/congratulation-badge.json")}
+                    />
+                  </>
                 )}
                 {didPlayerWin() || fail === 5 ? (
                   <TouchableOpacity
@@ -57,7 +78,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 5,
     borderRadius: 4,
-    elevation: 5,
+    elevation: 2,
     marginTop: 4,
     marginBottom: 15,
   },
@@ -74,5 +95,10 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 0.5,
     top: -20,
+  },
+  animationLottie: {
+    width: 200,
+    height: 200,
+    backgroundColor: "#1B2430",
   },
 });
