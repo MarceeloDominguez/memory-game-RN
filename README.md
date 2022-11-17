@@ -1,5 +1,7 @@
 # Memory Game
 
+A memory game where you have five chances to guess where the emojis are
+
 <table>
 <tr>
   <td><img src="https://user-images.githubusercontent.com/70117105/202476854-08cca563-c3f8-4c93-904c-342fc28a92fb.gif" width="300" height="550"></td>
