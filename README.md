@@ -36,6 +36,16 @@ Start the server
   npm start
 ```
 
+## Run without downloading the project
+
+Download Expo from Play Store or App Store and install on phone
+
+```bash
+  Open the app and scan the QR
+```
+
+<td><img width="302" alt="QR Expo" src="https://user-images.githubusercontent.com/70117105/204005125-52f45138-bfea-4bdd-9e90-808a27ddb504.png"></td>
+
 
 ## 🛠 Skills
 **Client:** React Native expo
